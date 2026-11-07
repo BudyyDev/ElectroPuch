@@ -49,6 +49,34 @@ if (floatingWa && f && 'IntersectionObserver' in window) {
   formObserver.observe(f);
 }
 
+/* carrusel de opiniones */
+const reviewTrack = document.getElementById('review-track');
+if (reviewTrack) {
+  const reviewSlides = [...reviewTrack.querySelectorAll('.review-slide')];
+  let activeReview = 0;
+  let reviewTimer;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const showReview = index => {
+    activeReview = (index + reviewSlides.length) % reviewSlides.length;
+    reviewSlides.forEach((slide, i) => { slide.hidden = i !== activeReview; });
+  };
+  const pauseReviews = () => {
+    window.clearInterval(reviewTimer);
+    reviewTimer = undefined;
+  };
+  const startReviews = () => {
+    if (reduceMotion.matches || document.hidden || reviewTimer || reviewSlides.length < 2) return;
+    reviewTimer = window.setInterval(() => showReview(activeReview + 1), 4500);
+  };
+  reviewTrack.addEventListener('mouseenter', pauseReviews);
+  reviewTrack.addEventListener('mouseleave', startReviews);
+  reviewTrack.addEventListener('focusin', pauseReviews);
+  reviewTrack.addEventListener('focusout', startReviews);
+  document.addEventListener('visibilitychange', () => document.hidden ? pauseReviews() : startReviews());
+  reduceMotion.addEventListener('change', () => reduceMotion.matches ? pauseReviews() : startReviews());
+  startReviews();
+}
+
 /* cookies */
 const ck = document.getElementById('ck');
 if (ck) {

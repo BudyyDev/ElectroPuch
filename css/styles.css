@@ -126,6 +126,17 @@ input:focus,select:focus,textarea:focus{outline:3px solid rgba(15,118,110,.18);b
 textarea{min-height:100px;resize:vertical}
 .err{font-size:14px;color:#b00020;margin:0;min-height:1em}
 
+/* ---------- opiniones ---------- */
+.reviews{background:#eaf1ee;border-top:1px solid #d8e3de}
+.review-carousel{max-width:760px;margin:0 auto}
+.review-track{min-height:250px;display:grid;place-items:center;background:#fff;border:2px solid #9aafa7;border-top:4px solid var(--gold);border-radius:var(--r);padding:38px 48px;text-align:center;box-shadow:var(--shadow)}
+.review-slide{width:100%;animation:review-in .28s ease both}
+.review-slide[hidden]{display:none}
+.review-stars{color:var(--gold);font-size:27px;line-height:1;letter-spacing:3px;margin-bottom:22px}
+.review-slide blockquote{margin:0 auto 18px;font:600 21px/1.5 var(--f-head);color:var(--ink-2)}
+.review-service{margin:0;color:var(--teal-d);font-weight:700;font-size:14px}
+@keyframes review-in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
+
 /* ---------- pie ---------- */
 footer{background:var(--ink);color:#c9d6d2;font-size:15px}
 footer .logo{color:#fff}
@@ -214,6 +225,8 @@ footer a:hover{color:var(--gold)}
   .btn{min-height:44px}
   form{padding:22px}
   .wa{width:54px;height:54px;right:14px}
+  .review-track{min-height:270px;padding:30px 22px}
+  .review-slide blockquote{font-size:18px}
   .logo small{display:none}
   #ck{padding-left:16px;padding-right:16px;gap:8px 10px}
   #ck>span{flex:1 1 100%;text-align:center}
