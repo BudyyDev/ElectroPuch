@@ -72,6 +72,7 @@ nav a:hover,nav a[aria-current="page"]{border-color:var(--gold);color:var(--teal
 .hero h1{color:#fff;max-width:800px;margin-bottom:22px;line-height:1.03}
 .hero p.lead{font-size:clamp(18px,2vw,21px);max-width:640px;color:rgba(255,255,255,.92);margin-bottom:34px}
 .kicker{display:inline-block;font:700 13px/1 var(--f-body);color:#f1c879;margin-bottom:18px}
+.kicker-years{display:block;border-top:1px solid rgba(241,200,121,.6);margin-top:8px;padding-top:8px}
 .hero-points{display:flex;flex-wrap:wrap;gap:10px 26px;list-style:none;margin:38px 0 0;padding:0;font-size:15px;color:rgba(255,255,255,.88)}
 .hero-points li{display:flex;align-items:center;gap:8px}
 .hero-points svg{width:18px;height:18px;stroke:var(--gold);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
