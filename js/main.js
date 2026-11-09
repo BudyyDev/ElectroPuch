@@ -66,7 +66,7 @@ if (reviewTrack) {
   };
   const startReviews = () => {
     if (reduceMotion.matches || document.hidden || reviewTimer || reviewSlides.length < 2) return;
-    reviewTimer = window.setInterval(() => showReview(activeReview + 1), 4500);
+    reviewTimer = window.setInterval(() => showReview(activeReview + 1), 5500);
   };
   reviewTrack.addEventListener('mouseenter', pauseReviews);
   reviewTrack.addEventListener('mouseleave', startReviews);
